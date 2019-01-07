@@ -1,0 +1,118 @@
+input {
+  @include transition(all 0.5s ease-in-out);
+}
+
+/* checkbox inputs */
+input[type="checkbox"],
+input[type="radio"] {
+  @include rectangle(15px);
+  background-color: #fff;
+  border: 1px solid #b7b7b7;
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="radio"]:not(:checked) + label {
+  &:before {
+    @include transform(scale(1.5));
+    opacity: 0;
+  }
+  img {
+    @include filter(grayscale(100%));
+  }
+}
+
+label {
+  position: relative;
+  margin: 0px;
+  padding-left: 20px;
+  cursor: pointer;
+  line-height: 20px;
+  &:after,
+  &:before {
+    @include transition(all 0.5s ease-in-out);
+    position: absolute;
+    content: "";
+  }
+  &:after {
+    @include rectangle(20px);
+    left: -10px;
+    top: 0px;
+    font-size: 14px;
+    transition: all 0.3s;
+    background: transparent;
+    padding: 2px;
+    cursor: pointer;
+    border: 1px solid white;
+  }
+  /* checked mark aspect */
+  &:before {
+    @include rectangle(14px);
+    left: -6.4px;
+    top: 3px;
+    color: #ffa38a;
+    background-image: url("../images/ico/png/i-close-color.png");
+  }
+  a {
+    color: #ffa38a;
+  }
+}
+
+/* text inputs, buttons */
+button:focus {
+  outline: none;
+}
+
+/* inputs */
+.input-easy::placeholder {
+  @include transition(all 0.5s ease-in-out);
+  opacity: 1;
+  color: #fff;
+}
+
+.input-easy:focus::placeholder {
+  opacity: 0;
+}
+
+.input-easy {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #d9d9d9;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: #fff;
+  position: relative;
+  &:focus {
+    outline: none;
+  }
+}
+
+.label-checkbox {
+  font-size: 12px;
+  line-height: 1rem;
+  margin-left: 0.5em;
+  width: calc(100% - 15px);
+  cursor: pointer;
+}
+
+.button {
+  @include transition(all 0.5s ease-in-out);
+  padding: 0.25rem 1rem;
+  text-align: center;
+  line-height: initial;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  &.btn-white-blue {
+    background-color: $color-gray1;
+    color: $color-blue1;
+    border: 2px solid $color-gray1;
+    &:hover {
+      background-color: $color-blue1;
+      color: $color-gray1;
+    }
+  }
+}
