@@ -1,0 +1,15 @@
+@charset 'UTF-8';
+
+
+// Modules
+@import "modules/variable"; // Customize variable
+@import "modules/general";      // General/Universal element on site
+@import "modules/header";       // Logo, Nav
+@import "modules/footer";       // Custom for footer
+
+
+/*@import "modules/icon";         // General icon*/
+@import "modules/inputs";          // Input, Btn
+
+// RWD - always last 
+/*@import "modules/responsive";*/
