@@ -6,7 +6,7 @@
   </object>
 </section>
 <section class="section-loading hide s-steps" data-step="2">
-<audio id="LoadingMusic"src="sounds/clearday.mp3" controls loop="true" hidden="true">
+<audio id="LoadingMusic" src="sounds/clearday.mp3" class="d-none" controls loop="true">
 <p>If you are reading this, it is because your browser does not support the audio element.</p>
 </audio>
   <div class="appel fixed w-100 text-right vh-100">
@@ -20,9 +20,7 @@
         <span data-decimalsSec>0123456789</span>
         <span data-singleSec>0123456789</span>
       </div>
-      </p>
     </div>
-  </div>
   </div>
   <figure class="photo load">
     <img src="images/static/view-1.png" alt="loading">
@@ -45,11 +43,11 @@
     </h3>
     <form class="pt-5 mb-5 pb-3" id="mainform">
       <div class="form-group mb-5 pb-3">
-        <input class="input-easy" type="text" placeholder="FIRST NAME*" required="true">
+        <input class="input-easy" type="text" placeholder="FIRST NAME*" aria-required="true">
         <p class="error-block d-none"></p>
       </div>
       <div class="form-group mb-5 pb-3">
-        <input class="input-easy" type="text" placeholder="LAST NAME*" required="true">
+        <input class="input-easy" type="text" placeholder="LAST NAME*" aria-required="true">
         <p class="error-block d-none"></p>
       </div>
       <div class="form-group mb-5 pb-3">
@@ -57,7 +55,7 @@
         <p class="error-block d-none"></p>
       </div>
       <div class="form-group mb-5 pb-3">
-        <input class="input-easy" type="email" placeholder="EMAIL*" required="true">
+        <input class="input-easy" type="email" placeholder="EMAIL*"  aria-required="true">
         <p class="error-block d-none"></p>
       </div>
       <div class="form-group mb-5 pb-3">
@@ -95,13 +93,13 @@
       </div>
       <div class="col-12 col-md-4 text-right relative d-flex flex-row-reverse justify-content-between d-md-block ">
         <div class="links d-inline-flex align-items-center h-100 mr-md-5 pr-md-4">
-          <a href="#" title="Twitter" class="d-inline-flex mr-2" target="_blank" data-tooltips="tooltip" data-placement="bottom" title="Go to our Twitter">
+          <a href="#" class="d-inline-flex mr-2" target="_blank" data-tooltips="tooltip" data-placement="bottom" title="Go to our Twitter">
             <svg class="svg-i-tw svg-i-tw-dims"></svg>
           </a>
-          <a href="#" title="Instagram" class="d-inline-flex mr-2" target="_blank" data-tooltips="tooltip" data-placement="bottom" title="Go to our Instagram">
+          <a href="#"  class="d-inline-flex mr-2" target="_blank" data-tooltips="tooltip" data-placement="bottom" title="Go to our Instagram">
             <svg class="svg-i-ig svg-i-ig-dims"></svg>
           </a>
-          <a href="#" title="Facebook" class="d-inline-flex" target="_blank" data-tooltips="tooltip" data-placement="bottom" title="Go to our Facebook">
+          <a href="#"  class="d-inline-flex" target="_blank" data-tooltips="tooltip" data-placement="bottom" title="Go to our Facebook">
             <svg class="svg-i-fb svg-i-fb-dims"></svg>
           </a>
         </div>

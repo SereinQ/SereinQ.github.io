@@ -8,7 +8,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-touch-fullscreen" content="yes">
 
-        <link rel="alternate" href="" type="application/rss+xml">
+        <link rel="alternate" href="#" type="application/rss+xml">
       <!--  <link rel="shortcut icon" href="/favicon.ico" /> -->
         <link rel="manifest" href="/manifest.json">
         <title>Rose Hill</title>
@@ -23,12 +23,6 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="">
 <meta property="og:image" content="">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site">
-<meta name="twitter:title" content="Rose Hill">
-<meta name="twitter:description" content="">
-<meta name="twitter:image:alt" content="Rose Hill">
-<meta name="twitter:image" content="">
 <link href="fonts/stylesheet.css" rel="stylesheet">
 <link href="css/library.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">

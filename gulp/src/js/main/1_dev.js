@@ -133,28 +133,28 @@ $(document).ready(function () {
 
 
 
-
+ 
         /* text validation */
-        $(".input-easy[aria-required='required']").each(function (index) {
+        $(".input-easy[aria-required='true']").each(function (index) {
             if (!$(this).val()) {
                 $(this).parent().find(".error-block").html("This field cannot be empty.").removeClass("d-none");
             }
             else {
-                $(this).parent().find(".error-block").addClass("d-none");
+                $(this).parent().find(".error-block").addClass("d-none"); 
             }
 
             if (next == 1) {
-                if (!$(this).val()) {
+                if (!$(this).val()) { 
                     next = 0;
                 }
                 else {
                     next = 1;
-                }
+                } 
             }
         });
 
         if (next == 1) {
-            $(".input-easy[aria-required='required'][type='email']").each(function (index) {
+            $(".input-easy[aria-required='true'][type='email']").each(function (index) {
 
                 let m = $(this).val();
 
