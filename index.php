@@ -45,11 +45,11 @@
     </h3>
     <form class="pt-5 mb-5 pb-3" id="mainform">
       <div class="form-group mb-5 pb-3">
-        <input class="input-easy" type="text" placeholder="FIRST NAME*" aria-required="required">
+        <input class="input-easy" type="text" placeholder="FIRST NAME*" required="true">
         <p class="error-block d-none"></p>
       </div>
       <div class="form-group mb-5 pb-3">
-        <input class="input-easy" type="text" placeholder="LAST NAME*" aria-required="required">
+        <input class="input-easy" type="text" placeholder="LAST NAME*" required="true">
         <p class="error-block d-none"></p>
       </div>
       <div class="form-group mb-5 pb-3">
@@ -57,7 +57,7 @@
         <p class="error-block d-none"></p>
       </div>
       <div class="form-group mb-5 pb-3">
-        <input class="input-easy" type="email" placeholder="EMAIL*" aria-required="required">
+        <input class="input-easy" type="email" placeholder="EMAIL*" required="true">
         <p class="error-block d-none"></p>
       </div>
       <div class="form-group mb-5 pb-3">
