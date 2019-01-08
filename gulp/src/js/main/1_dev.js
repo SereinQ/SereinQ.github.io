@@ -1,11 +1,23 @@
 var sectionStep;
 var topx = $(document).scrollTop();
+var music = document.getElementById("LoadingMusic");
 
 /* stepping */
 
 /* standard stepper */
 function stepStandard() {
     $("[data-step='" + sectionStep + "']").toggleClass("hide");
+}
+
+/* background music */
+function stopMusic() {
+    music.pause();
+    $("[data-volume]").addClass("svg-i-mute").addClass("svg-i-mute-dims").removeClass("svg-i-volume").removeClass("svg-i-volume-dims");
+}
+
+function playMusic() {
+    music.play();
+    $("[data-volume]").removeClass("svg-i-mute").removeClass("svg-i-mute-dims").addClass("svg-i-volume").addClass("svg-i-volume-dims");
 }
 
 /* loading tower */
@@ -44,12 +56,19 @@ function stepLoading() {
 
         $(".counter-load span:not(.data-divider)").css('top', "0px").css("transition-duration", towerSpeed + "ms");
 
+        setTimeout(function () {
+            stopMusic();
+        }, towerSpeed);
+
     }, 1000);
 }
+
 
 function scrollBottom() {
     $('html,body').animate({ scrollTop: document.body.scrollHeight }, "0");
 }
+
+
 
 $(document).ready(function () {
     /* */
@@ -79,35 +98,90 @@ $(document).ready(function () {
         $("[data-expandToggle='" + item + "']").toggleClass("toggleNotActive");
     });
 
-
-
+    /* stepping click */
     $("[data-gostep]").click(function () {
-        ((sectionStep == 2) ? "" : $("[data-step='" + sectionStep + "']").toggleClass("hide"));
+        if (sectionStep != 2) {
+            $("[data-step='" + sectionStep + "']").toggleClass("hide");
+            playMusic();
+        }
         sectionStep = $(this).attr("data-gostep");
         ((sectionStep == 3) ? $(".body").removeClass('stop-scroll') : $(".body").addClass('stop-scroll'));
         ((sectionStep == 3) ? stepLoading() : stepStandard());
         ((sectionStep == 1) ? $("[data-step='" + sectionStep + "']").removeClass("hide") : "");
     });
 
+    /* play or stop background music */
+    let volume;
+    $("[data-volume]").click(function () {
+        volume = $(this).attr("data-volume");
+        if ((volume == 1)) {
+            $(this).attr("data-volume", 0);
+            stopMusic();
+        }
+        else {
+            $(this).attr("data-volume", 1);
+            playMusic();
+        }
+
+    });
+
+
     /* send form */
     $("[data-submit='1']").click(function () {
-        let submit = 0;
-/* 
+        let next = 1;
+
+
+
+
+
+        /* text validation */
         $(".input-easy[aria-required='required']").each(function (index) {
-            let t = $(this);
-            let x = $(this).val();
-            
-            if (x == "") {
-                console.log(x);
-                t.closest(".error-block").html("This field cannot be empty.").removeClass("d-none");
+            if (!$(this).val()) {
+                $(this).parent().find(".error-block").html("This field cannot be empty.").removeClass("d-none");
             }
             else {
-                submit = 1;
+                $(this).parent().find(".error-block").addClass("d-none");
+            }
+
+            if (next == 1) {
+                if (!$(this).val()) {
+                    next = 0;
+                }
+                else {
+                    next = 1;
+                }
             }
         });
-*/
+
+        if (next == 1) {
+            $(".input-easy[aria-required='required'][type='email']").each(function (index) {
+
+                let m = $(this).val();
+
+                /* email validation */
+                function validateEmail(email) {
+                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(m);
+                }
+
+                if (validateEmail(m)) {
+                    /* success, proceed submit */
+
+                } else {
+                    next = 0;
+                    $(this).parent().find(".error-block").html("This is not email.").removeClass("d-none");
+                }
+
+            });
+        }
+
+
+        if (next == 1) {
             sessionStorage.setItem('submit', '1');
             $("#mainform").submit();
+        }
+
+
     });
 
     /* reset sending */

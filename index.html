@@ -41,16 +41,18 @@
 </header>   
 
 
-<?php include "include/header.php"?>
 <section class="section-start standard-transition pointer d-flex align-items-center justify-content-center vh-100 bg-blue1 absolute s-steps bot hide px-5"
   data-step="1" data-gostep="2">
   <object class="p-none img-fluid" type="image/svg+xml" data="images/static/logo.svg">
     Your browser does not support SVG
   </object>
 </section>
-<section class="section-loading hide s-steps " data-step="2">
+<section class="section-loading hide s-steps" data-step="2">
+<audio id="LoadingMusic"src="sounds/clearday.mp3" controls loop="true" hidden="true">
+<p>If you are reading this, it is because your browser does not support the audio element.</p>
+</audio>
   <div class="appel fixed w-100 text-right vh-100">
-    <svg class="svg-i-volume svg-i-volume-dims pointer relative right-icos"></svg>
+    <svg class="svg-i-volume volume-icon pointer relative right-icos" data-volume="1"></svg>
     <div class="counter text-gray1 absolute pointer" data-gostep="3" data-scroll="body">
       <p class="counter-load" data-invitation="0">Invitation</p>
       <div class="counter-load hide" data-invitation="1">
@@ -97,7 +99,7 @@
         <p class="error-block d-none"></p>
       </div>
       <div class="form-group mb-5 pb-3">
-        <input class="input-easy" type="text" placeholder="EMAIL*" aria-required="required">
+        <input class="input-easy" type="email" placeholder="EMAIL*" aria-required="required">
         <p class="error-block d-none"></p>
       </div>
       <div class="form-group mb-5 pb-3">
@@ -107,11 +109,11 @@
       <div class="d-flex justify-content-center">
         <p>ARE YOU A BROKER?</p>
         <div class="form-group ml-4 mb-5">
-          <input type="radio" id="yes" name="broker" value="huey">
+          <input type="radio" id="yes" name="broker" value="yes">
           <label for="yes">Yes</label>
         </div>
         <div class="form-group ml-4">
-          <input type="radio" id="no" name="broker" value="dewey">
+          <input type="radio" id="no" name="broker" value="no">
           <label for="no">No</label>
         </div>
         <p class="error-block d-none"></p>
@@ -180,7 +182,6 @@
     </div>
   </div>
 </section>
-<?php include "include/footer.php"?>
 <footer class="footer">
 </footer>
 <script src="js/library.js"></script>

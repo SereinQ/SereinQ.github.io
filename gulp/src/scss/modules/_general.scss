@@ -182,6 +182,7 @@ ul.reset,
       width: 100%;
     }
   }
+
   .counter {
     @include transform(translateY(-50%));
     top: 50%;
