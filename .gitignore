@@ -1,3 +1,25 @@
+.DS_Store
+node_modules
+/dist
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
 assets
 gulp/node_modules
 gulp/node_modules/
@@ -11,3 +33,8 @@ gulp/node_modules/*
 =======
 /gulp/node_modules/*
 >>>>>>> 0b7332b7da214fabfe1c73724e1a2eda40a17a0d
+
+/SereinQ.github.io
+/SereinQ.github.io/
+/SereinQ.github.io/*
+
