@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "node ./node_modules/vue-gh-pages/index.js",
+    "homepage": "https://github.com/SereinQ/my-app"
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
@@ -13,6 +15,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "vue": "^2.5.21",
+    "vue-gh-pages": "^1.19.0",
     "vue-jquery": "^1.0.6",
     "vue-multi-ref": "^2.0.0",
     "vue-router": "^3.0.1",
@@ -28,6 +31,7 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.11.0",
+    "push-dir": "^0.4.1",
     "vue-svg-loader": "^0.11.0",
     "vue-template-compiler": "^2.5.21"
   }
