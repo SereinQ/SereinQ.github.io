@@ -1,6 +1,6 @@
 # deploy
 
-> depo desc
+> depo
 
 ## Build Setup
 
